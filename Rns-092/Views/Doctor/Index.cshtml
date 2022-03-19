@@ -1,0 +1,29 @@
+﻿
+@model IEnumerable<Rns_092.Models.Doctors>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-stripped">
+    <tr>
+        <th>@Html.DisplayNameFor(x => x.id) </th>
+        <th>@Html.DisplayNameFor(x => x.name) </th>
+        <th>@Html.DisplayNameFor(x => x.speciality) </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@Html.DisplayFor(x => item.id)</td>
+    <td>@Html.DisplayFor(x => item.name)</td>
+    <td>@Html.DisplayFor(x => item.speciality)</td>
+    <td>@Html.ActionLink("Edit","Edit", new { @id = item.id },new { @class = "btn btn-success" })</td>
+    <td>@Html.ActionLink("Delete", "Delete", new { @id = item.id }, new { @class = "btn btn-danger" })</td>
+</tr>
+    }
+     
+    
+
+
+</table>    
